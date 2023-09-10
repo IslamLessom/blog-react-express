@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function Home() {
-  const posts = [
+  const publik = [
     {
       id: 1,
       title: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
@@ -32,19 +32,21 @@ export default function Home() {
   return (
     <div className="home">
       <div className="posts">
-        {posts.map((post) => {
-          <div className="post" key={post.id}>
-            <div className="img">
-              <img src={post.img} alt="" />
+        {publik.map((post) => {
+          return (
+            <div className="post" key={post.id}>
+              <div className="img">
+                <img src={post.img} alt="" />
+              </div>
+              <div className="content">
+                <Link className="link" to={`/post/${post.id}`}>
+                  <h1>{post.title}</h1>
+                </Link>
+                <p>{post.desc}</p>
+                <button>Читать</button>
+              </div>
             </div>
-            <div className="content">
-              <Link className="link" to={`/post/${post.id}`}>
-                <h1>{post.title}</h1>
-              </Link>
-              <p>{post.desc}</p>
-              <button>Читать</button>
-            </div>
-          </div>;
+          );
         })}
       </div>
     </div>
