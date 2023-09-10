@@ -1,7 +1,11 @@
-import React from 'react'
+import React from "react";
+//img
+import Logo from "../img/logo.png"
 
 export default function Footer() {
   return (
-    <div>Footer</div>
-  )
+    <footer>
+      <img src={Logo} alt="" />
+    </footer>
+  );
 }
