@@ -1,8 +1,6 @@
 import React from "react";
-//route
-import { Link } from "react-router-dom";
 
-export default function Home() {
+export default function Menu() {
   const posts = [
     {
       id: 1,
@@ -30,25 +28,19 @@ export default function Home() {
     },
   ];
   return (
-    <div className="home">
-      <div className="posts">
-        {posts.map((post) => {
-          return (
+    <div className="menu">
+      <h1>Other post you may like</h1>
+      {posts.map((post) => {
+        return(
             <div className="post" key={post.id}>
-              <div className="img">
                 <img src={post.img} alt="" />
-              </div>
-              <div className="content">
-                <Link className="link" to={`/post/${post.id}`}>
-                  <h1>{post.title}</h1>
-                </Link>
-                <p>{post.desc}</p>
+                <h2>{post.title}</h2>
                 <button>Читать</button>
-              </div>
             </div>
-          );
-        })}
-      </div>
+        )
+      })}
+        
+      
     </div>
   );
 }
