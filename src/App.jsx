@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import Write from "./pages/Write";
 import Single from "./pages/Single";
 import Home from "./pages/Home";
+
 //router
 import {
   createBrowserRouter,
